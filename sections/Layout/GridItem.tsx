@@ -6,20 +6,20 @@ interface Props {
   children: Section;
   layout?: {
     rowStart?: {
-      mobile?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "auto";
-      desktop?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "auto";
+      mobile?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "Auto";
+      desktop?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "Auto";
     };
     rowSpan?: {
-      mobile?: "1" | "2" | "3" | "4" | "5" | "6" | "full";
-      desktop?: "1" | "2" | "3" | "4" | "5" | "6" | "full";
+      mobile?: "1" | "2" | "3" | "4" | "5" | "6" | "Full";
+      desktop?: "1" | "2" | "3" | "4" | "5" | "6" | "Full";
     };
     colStart?: {
-      mobile?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "auto";
-      desktop?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "auto";
+      mobile?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "Auto";
+      desktop?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "Auto";
     };
     colSpan?: {
-      mobile?: "1" | "2" | "3" | "4" | "5" | "6" | "full";
-      desktop?: "1" | "2" | "3" | "4" | "5" | "6" | "full";
+      mobile?: "1" | "2" | "3" | "4" | "5" | "6" | "Full";
+      desktop?: "1" | "2" | "3" | "4" | "5" | "6" | "Full";
     };
   };
 }
@@ -40,8 +40,7 @@ function GridItem({ children, layout }: Props) {
         layout?.colStart?.desktop &&
           grid.colStart.desktop[layout.colStart.desktop],
         layout?.colSpan?.mobile && grid.colSpan.mobile[layout.colSpan.mobile],
-        layout?.colSpan?.desktop &&
-          grid.colSpan.desktop[layout.colSpan.desktop],
+        layout?.colSpan?.desktop && grid.colSpan.desktop[layout.colSpan.desktop]
       )}
     >
       <children.Component {...children.props} />
